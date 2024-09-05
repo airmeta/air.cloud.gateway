@@ -1,0 +1,11 @@
+﻿################################################################################
+# 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
+################################################################################
+
+/.vs
+/Air.Cloud.Common/bin
+/Air.Cloud.Common/obj
+/Air.Cloud.GateWay/bin
+/Air.Cloud.GateWay/obj
+/Air.Cloud.Security.Jwt/bin
+/Air.Cloud.Security.Jwt/obj
