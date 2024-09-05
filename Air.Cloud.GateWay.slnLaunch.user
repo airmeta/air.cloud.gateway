@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "\u65B0\u5EFA\u914D\u7F6E\u6587\u4EF6",
+    "Projects": [
+      {
+        "Name": "Air.Cloud.GateWay\\Air.Cloud.GateWay.csproj",
+        "Action": "Start"
+      },
+      {
+        "Name": "Air.Cloud.Security.Jwt\\Air.Cloud.Security.Jwt.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

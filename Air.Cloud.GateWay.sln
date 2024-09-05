@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34414.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Air.Cloud.GateWay", "Air.Cloud.GateWay\Air.Cloud.GateWay.csproj", "{DB289966-83C5-4017-BF15-701F52CBA8F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Air.Cloud.Security.Jwt", "Air.Cloud.Security.Jwt\Air.Cloud.Security.Jwt.csproj", "{B89A94EC-E99F-4B62-941D-74326C49AA07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Air.Cloud.Common", "Air.Cloud.Common\Air.Cloud.Common.csproj", "{F5BC5479-C899-4E18-9C2E-69B56F522D5E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Protos", "Protos", "{56C73072-1783-48C5-B05D-EFD7B290DACB}"
+	ProjectSection(SolutionItems) = preProject
+		Authorization.proto = Authorization.proto
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB289966-83C5-4017-BF15-701F52CBA8F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB289966-83C5-4017-BF15-701F52CBA8F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB289966-83C5-4017-BF15-701F52CBA8F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB289966-83C5-4017-BF15-701F52CBA8F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B89A94EC-E99F-4B62-941D-74326C49AA07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B89A94EC-E99F-4B62-941D-74326C49AA07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B89A94EC-E99F-4B62-941D-74326C49AA07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B89A94EC-E99F-4B62-941D-74326C49AA07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5BC5479-C899-4E18-9C2E-69B56F522D5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5BC5479-C899-4E18-9C2E-69B56F522D5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5BC5479-C899-4E18-9C2E-69B56F522D5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5BC5479-C899-4E18-9C2E-69B56F522D5E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {86719D8E-E868-457D-BB3B-92542E07C775}
+	EndGlobalSection
+EndGlobal

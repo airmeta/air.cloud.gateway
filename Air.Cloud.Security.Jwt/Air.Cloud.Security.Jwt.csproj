@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Air.Cloud.HostApp" Version="1.0.2" />
+    <PackageReference Include="Air.Cloud.Plugins.Jwt" Version="1.0.2" />
+    <PackageReference Include="Grpc.AspNetCore" Version="2.49.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="新文件夹\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="..\Authorization.proto" GrpcServices="Both">
+      <Link>Protos\Authorization.proto</Link>
+    </Protobuf>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="jwt_keys.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  
+</Project>

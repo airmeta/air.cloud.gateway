@@ -1,0 +1,51 @@
+/*
+ * Copyright (c) 2024 安徽三实软件科技有限公司
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ *
+ * This file is provided under the Mozilla Public License Version 2.0,
+ * and the "NO WARRANTY" clause of the MPL is hereby expressly
+ * acknowledged.
+ */
+syntax = "proto3";
+
+option csharp_namespace = "Air.Cloud.Core";
+
+package Air.Cloud.Service;
+
+//授权服务
+service AuthorizationService {
+
+	//验证授权信息(每次接口请求时使用,验证用户授权信息)
+	rpc ValidateAuthorization (AuthorizationValidateContent) returns (AuthorizationValidateResult);
+}
+
+//授权验证内容
+message AuthorizationValidateContent {
+  string Authorization = 1;
+  string XAuthorization=2;
+  string RequestPath=3;
+}
+//授权验证结果
+message AuthorizationValidateResult{
+	bool IsSuccess=1;
+	 string Message = 2;
+	string UserInformation=3;
+}
+
+//申请授权/取消授权 内容
+message AuthorizationCliamsContent{
+	string Key=1;
+	map<string,string> Cliams=2;
+	int32 ExpiredTime=3;
+}
+
+//申请授权/取消授权 结果
+message AuthorizationResult{
+  bool IsSuccess = 1;
+  string Message = 2;
+  string Authorization=3;
+  string XAuthorization=4;
+}
