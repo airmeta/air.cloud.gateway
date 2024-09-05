@@ -19,15 +19,15 @@ namespace Air.Cloud.GateWay.Options
         /// <summary>
         /// 是否启用授权服务
         /// </summary>
-        public bool EnableAuthorizationService { get; set; }
+        public bool EnableAuthorizationService { get; set; } = true;
         /// <summary>
         /// 用户访问Token标识
         /// </summary>
-        public string AuthorizationHeader { get; set; }
+        public string AuthorizationHeader { get; set; } = "Authorization";
         /// <summary>
         /// 用户刷新Token标识
         /// </summary>
-        public string XAuthorizationHeader { get; set; }
+        public string XAuthorizationHeader { get; set; } = "X-Authorization";
         /// <summary>
         /// 授权服务地址
         /// </summary>
