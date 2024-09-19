@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Middleware\UrlProxyMiddleware.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="whitelist.txt" />
   </ItemGroup>
 

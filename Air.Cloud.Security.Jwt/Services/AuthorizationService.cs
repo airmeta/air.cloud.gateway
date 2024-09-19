@@ -10,6 +10,7 @@
  * acknowledged.
  */
 using Air.Cloud.Core;
+using Air.Cloud.Security.Jwt.Const;
 
 using Grpc.Core;
 
@@ -35,6 +36,22 @@ namespace Air.Cloud.Security.Jwt.Services
                 }))
             };
             return Task.FromResult(authorizationValidateResult);
+        }
+
+        public override Task<AuthorizationValidateContent> CreateAuthorization(AuthorizationCliamsContent request, ServerCallContext context)
+        {
+            Dictionary<string, object> keyValuePairs = new Dictionary<string, object>();
+            request.Cliams.ToList().ForEach(s =>
+            {
+                keyValuePairs.Add(s.Key, s.Value);
+            });
+            var accessToken = JWTEncryption.Encrypt(keyValuePairs, TokenConst.ACCESS_TOKEN_STORE_HOUR * 60);
+            // 生成刷新Token令牌
+            var refreshToken = JWTEncryption.GenerateRefreshToken(accessToken, TokenConst.EXPIRED_TIME);
+            AuthorizationValidateContent authorizationValidateContent = new AuthorizationValidateContent();
+            authorizationValidateContent.Authorization = accessToken;
+            authorizationValidateContent.XAuthorization = refreshToken;
+            return Task.FromResult(authorizationValidateContent);
         }
     }
 }

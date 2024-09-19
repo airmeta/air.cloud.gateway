@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project>
   <PropertyGroup>
     <_PublishTargetUrl>F:\星曳数据\研究院\air.cloud.gateway\Air.Cloud.GateWay\bin\Release\net6.0\publish\</_PublishTargetUrl>
-    <History>True|2024-09-03T07:14:33.6424632Z;</History>
+    <History>True|2024-09-18T02:19:26.9086871Z;True|2024-09-18T10:01:04.8996442+08:00;True|2024-09-03T15:14:33.6424632+08:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>

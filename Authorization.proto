@@ -20,13 +20,15 @@ service AuthorizationService {
 
 	//验证授权信息(每次接口请求时使用,验证用户授权信息)
 	rpc ValidateAuthorization (AuthorizationValidateContent) returns (AuthorizationValidateResult);
+	//创建授权信息(每次登录时使用)
+	rpc CreateAuthorization(AuthorizationCliamsContent) returns (AuthorizationValidateContent);
 }
+
 
 //授权验证内容
 message AuthorizationValidateContent {
   string Authorization = 1;
   string XAuthorization=2;
-  string RequestPath=3;
 }
 //授权验证结果
 message AuthorizationValidateResult{
@@ -49,3 +51,6 @@ message AuthorizationResult{
   string Authorization=3;
   string XAuthorization=4;
 }
+
+
+

@@ -32,6 +32,10 @@ namespace Air.Cloud.GateWay.Options
         /// 授权服务地址
         /// </summary>
         public Authorizationservice AuthorizationService { get; set; }
+        /// <summary>
+        /// 白名单请求头 包含此配置项请求头的请求不进行授权验证
+        /// </summary>
+        public string WhiteHeader { get; set; } = "Client";
     }
     public class Authorizationservice
     {

@@ -9,10 +9,11 @@
  * and the "NO WARRANTY" clause of the MPL is hereby expressly
  * acknowledged.
  */
+using Air.Cloud.Common.Model;
 using Air.Cloud.Core;
 using Air.Cloud.Core.App;
 using Air.Cloud.Core.Extensions;
-using Air.Cloud.GateWay.Model;
+using Air.Cloud.Core.Plugins.Security.RSA;
 using Air.Cloud.GateWay.Options;
 
 using Grpc.Net.Client;
@@ -45,6 +46,17 @@ namespace Air.Cloud.GateWay.Middleware
                         await next(context); // 继续处理请求
                         return;
                     }
+                    string? WhiteHeader = context.Request.Headers[settings.WhiteHeader];
+                    if (WhiteHeader != null)
+                    {
+                        context.Request.Headers.Add("USER_INFORMATION", context.Request.Headers["USER_INFORMATION"]);
+                        context.Response.Headers.Add("Authorization", context.Request.Headers["Authorization"]);
+                        context.Response.Headers.Add("X-Authorization", context.Request.Headers["X-Authorization"]);
+                        //验证通过
+                        await next(context); // 继续处理请求
+                        return;
+                    }
+
                     //启用授权服务验证 开始验证
                     Uri uri = new Uri($"http://{settings.AuthorizationService.ServiceIP}:{settings.AuthorizationService.ServicePort}");
                     var channel = GrpcChannel.ForAddress(uri);
@@ -84,7 +96,8 @@ namespace Air.Cloud.GateWay.Middleware
                     catch (Exception ex)
                     {
 
-                        throw ex;
+                        context.Response.StatusCode = 401;
+                        await context.Response.WriteAsync("Authorization Failed;"+ex.Message);
                     }
 
                 }

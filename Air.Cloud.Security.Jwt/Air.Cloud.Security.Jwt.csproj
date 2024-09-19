@@ -14,10 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="新文件夹\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Protobuf Include="..\Authorization.proto" GrpcServices="Both">
       <Link>Protos\Authorization.proto</Link>
     </Protobuf>

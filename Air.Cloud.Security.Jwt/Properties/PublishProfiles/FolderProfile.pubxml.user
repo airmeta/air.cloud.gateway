@@ -4,7 +4,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 -->
 <Project>
   <PropertyGroup>
-    <_PublishTargetUrl>F:\星曳数据\研究院\air.cloud.gateway\Air.Cloud.Security.Jwt\bin\Release\net6.0\publish\</_PublishTargetUrl>
+    <_PublishTargetUrl>bin\Release\net6.0\publish\</_PublishTargetUrl>
     <History>True|2024-09-03T07:13:33.0972311Z;</History>
     <LastFailureDetails />
   </PropertyGroup>

@@ -9,7 +9,7 @@
  * and the "NO WARRANTY" clause of the MPL is hereby expressly
  * acknowledged.
  */
-namespace Air.Cloud.GateWay.Model
+namespace Air.Cloud.Common.Model
 {
     /// <summary>
     /// 用户信息结果
@@ -19,7 +19,7 @@ namespace Air.Cloud.GateWay.Model
         /// <summary>
         /// 用户信息
         /// </summary>
-        public Dictionary<string,string> User { get; set; }
+        public Dictionary<string, string> User { get; set; }
         /// <summary>
         /// 用户Token
         /// </summary>
