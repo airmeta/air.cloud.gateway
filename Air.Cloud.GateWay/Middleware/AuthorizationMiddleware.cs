@@ -73,8 +73,7 @@ namespace Air.Cloud.GateWay.Middleware
                         var call = client.ValidateAuthorization(new AuthorizationValidateContent()
                         {
                             Authorization = Auth,
-                            XAuthorization = XAuth,
-                            RequestPath = "123"
+                            XAuthorization = XAuth
                         });
                         //请求体
                         if (call.IsSuccess)
